@@ -11,13 +11,14 @@ export const getProducts = async (req, res) => {
   }
 };
 
-export const renderForm = async (req, res) => {
-  try {
-    res.render("listProducts");
-  } catch (error) {
-    console.error(`error in rendering form :: ${error}`);
-  }
-};
+//todo testing
+// export const renderForm = async (req, res) => {
+//   try {
+//     res.render("listProducts");
+//   } catch (error) {
+//     console.error(`error in rendering form :: ${error}`);
+//   }
+// };
 
 export const addProduct = async (req, res) => {
   try {
