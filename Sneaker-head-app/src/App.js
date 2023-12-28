@@ -1,7 +1,6 @@
 // import {RouterProvider , createBrowserRouter} from "react-router-dom"
 import { Navbar } from "./components/Navabr";
 import Products from "./components/products";
-import "./App.css";
 
 function App() {
   // const router = createBrowserRouter([

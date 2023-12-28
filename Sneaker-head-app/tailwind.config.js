@@ -2,8 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
 
+  daisyui: {
+    themes: ["retro"],
+  },
   theme: {
     extend: {},
   },
-  plugins: [require("flowbite/plugin")],  
+
+  plugins: [require("daisyui")],
 };
