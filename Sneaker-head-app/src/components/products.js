@@ -3,6 +3,7 @@ import { productSelector } from "../redux/Reducers/ProductReducers";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchProducts } from "../redux/Reducers/ProductReducers";
+import { NavLink } from "react-router-dom";
 
 const Products = () => {
   const products = useSelector(productSelector);
@@ -32,7 +33,7 @@ const Products = () => {
               >
                 <figure>
                   <img
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-3xl"
                     src={products.img}
                     alt={products.name}
                   />
@@ -54,7 +55,7 @@ const Products = () => {
                       <span className="font-bold">MRP:₹{products.MRP}</span>
                     </div>
                     <div className="card-actions justify-end">
-                      <button className="btn btn-primary">Add to Cart</button>
+                      <NavLink className="btn btn-primary">Add to Cart</NavLink>
                     </div>
                   </div>
                 </div>

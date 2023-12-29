@@ -3,20 +3,21 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
 
   daisyui: {
-    themes: [ "retro"],
+    themes: ["retro"],
   },
   theme: {
     extend: {},
-  },"animation": {
-    "text-gradient": "text-gradient 1.5s linear infinite"
   },
-  "keyframes": {
+  animation: {
+    "text-gradient": "text-gradient 1.5s linear infinite",
+  },
+  keyframes: {
     "text-gradient": {
-      "to": {
-        "backgroundPosition": "200% center"
-      }
-    }
+      to: {
+        backgroundPosition: "200% center",
+      },
+    },
   },
-  
-  plugins: [require("daisyui")],
+
+  plugins: [require("daisyui"), require("tailwind-scrollbar")],
 };

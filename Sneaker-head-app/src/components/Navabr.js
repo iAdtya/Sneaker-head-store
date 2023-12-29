@@ -11,8 +11,16 @@ export const Navbar = () => {
             </NavLink>
           </div>
           <div className="flex-none">
-            <NavLink to="/add" className="btn btn-warning">
-              Add Contact
+            <div className="mr-4">
+              <NavLink
+                to="/orders"
+                className="btn  btn-active btn-primary ml-4"
+              >
+                Orders
+              </NavLink>
+            </div>
+            <NavLink to="/cart" className="btn  btn-active btn-primary">
+              Go to Cart
             </NavLink>
           </div>
         </div>
