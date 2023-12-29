@@ -2,7 +2,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Navbar } from "./components/Navabr";
 import Products from "./components/products";
 
+
 function App() {
+
+
   const router = createBrowserRouter([
     {
       path: "/",

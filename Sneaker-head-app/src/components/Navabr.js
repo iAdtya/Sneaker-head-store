@@ -7,7 +7,7 @@ export const Navbar = () => {
         <div className="navbar">
           <div className="flex-1">
             <NavLink to="/" className="btn btn-ghost text-xl text-lime-400">
-              CONTACT LIST
+              SNEAKER HEAD
             </NavLink>
           </div>
           <div className="flex-none">
