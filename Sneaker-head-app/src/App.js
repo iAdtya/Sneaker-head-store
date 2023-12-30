@@ -4,6 +4,7 @@ import Products from "./components/products";
 import { ProductAdd } from "./components/ProductAdd";
 import { Cart } from "./components/Cart";
 import { Orders } from "./components/Orders";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const router = createBrowserRouter([
@@ -36,6 +37,7 @@ function App() {
     <>
       <div className="flex flex-col min-h-screen">
         <div className="flex-grow">
+          <Toaster />
           <RouterProvider router={router} />
         </div>
       </div>

@@ -1,7 +1,9 @@
-import { deleteProduct } from "../redux/Reducers/ProductReducers";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { checkout } from "../redux/Reducers/ProductReducers";
+import toast from "react-hot-toast";
+
+const notify = () => toast.success("Checked Out Successfully!!");
 
 export const Cart = () => {
   const dispatch = useDispatch();
@@ -46,7 +48,7 @@ export const Cart = () => {
     <>
       <div className="h-screen pt-20">
         <h1 className="mb-10 text-center text-2xl font-bold">
-          {cart.length === 0 ? "Cart Empty 🥹 " : "Cart Items 🥳"}
+          {cart.length === 0 ? "Cart Empty 🥹 Hope to see you again!! " : "Cart Items 🥳"}
         </h1>
         <div
           id="card"
@@ -125,7 +127,10 @@ export const Cart = () => {
               </div>
             </div>
             <button
-              onClick={() => dispatch(checkout(total))}
+              onClick={() => {
+                dispatch(checkout(total));
+                notify();
+              }}
               className="mt-6 w-full rounded-md bg-lime-500 py-1.5 font-medium text-blue-50 hover:bg-lime-600"
             >
               Check out

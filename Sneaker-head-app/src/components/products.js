@@ -5,6 +5,9 @@ import { useDispatch } from "react-redux";
 import { fetchProducts } from "../redux/Reducers/ProductReducers";
 import { addToCart } from "../redux/Reducers/ProductReducers";
 import { Footer } from "./footer";
+import toast from "react-hot-toast";
+
+const notify = () => toast.success("Added to Cart!!");
 
 const Products = () => {
   const products = useSelector(productSelector);
@@ -12,6 +15,7 @@ const Products = () => {
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
+    notify();
   };
 
   useEffect(() => {
