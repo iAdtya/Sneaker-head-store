@@ -1,36 +1,82 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { productSelector } from "../redux/Reducers/ProductReducers";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchProducts } from "../redux/Reducers/ProductReducers";
+import { addToCart } from "../redux/Reducers/ProductReducers";
+import { Footer } from "./footer";
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
+  const products = useSelector(productSelector);
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+  };
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await axios.get("http://localhost:8000/api/products");
-      console.log(response.data);
-      setProducts(response.data.products);
-    };
+    dispatch(fetchProducts()).catch((error) => {
+      console.error("Failed to fetch products:", error);
+    });
+  }, [dispatch]);
 
-    fetchProducts();
-  }, []);
+  useEffect(() => {
+    console.log(products);
+  }, [products]);
 
   return (
     <>
-      <div>
-        <h1>Listing all the product!!</h1>
-        <div>
-          <ul>
+      <div className="p-4">
+        <h1 className=" text-2xl font-bold mb-2 mt-16 text-center inline-flex animate-text-gradient bg-gradient-to-r from-[#000000] via-[#7e02fa] to-[#ee1919] bg-[200%_auto] bg-clip-text  text-transparent">
+          Welcome, Sneaker Head!!
+        </h1>
+        <div className="flex justify-center ">
+          <div className="grid grid-cols-4 gap-4 items-center  ">
             {products.map((product) => (
-              <li key={product.id}>
-                {product.name}
-                {product.description}
-                {product.MRP}
-                {product.img}
-              </li>
+              <div
+                className="card card-compact w-full bg-base-100 shadow-xl rounded-3xl"
+                key={product.id}
+              >
+                <figure>
+                  <img
+                    className="w-full h-full object-cover rounded-3xl"
+                    src={product.img}
+                    alt={product.name}
+                  />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">
+                    Name:<span className="text-center">{product.name}</span>
+                  </h2>
+
+                  <div className="h-44">
+                    <p>
+                      <span className="font-bold ">Description: </span>
+                      {product.description}
+                    </p>
+                  </div>
+
+                  <div className="flex justify-between">
+                    <div className="mt-4">
+                      <span className="font-bold">MRP: ₹ {product.MRP}</span>
+                    </div>
+
+                    <div className="card-actions justify-end">
+                      <button
+                        onClick={() => handleAddToCart(product)}
+                        className="btn btn-primary rounded-3xl"
+                      >
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

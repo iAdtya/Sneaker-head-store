@@ -46,7 +46,7 @@
     "name": "Triple White ",
     "description": "Introducing the NOCTA Glide. Inspired by the Zoom Flight 95s with a signature NOCTA spin. This silhouette is designed with a textile upper that makes for a more breathable and lightweight shoe. Inclusive of a Zoom Air bag in the forefoot, durable rubber, GTEK outsole tractions, translucent rubber outsole and combined with the custom NOCTA logo on the tongue. While the NOCTA Glide is a reference to the game of basketball, it's a lifestyle shoe",
     "MRP": 13995,
-    "img": "https://static.nike.com/a/images/t_prod_sc/w_640,c_limit,f_auto/d75cc38b-12e0-4132-bd4d-3fff1c0b55f7/nocta-glide-triple-white-dm0879-100-release-date.jpg"
+    "img": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/956102de-72cf-4c3f-9855-d26d83474f0f/air-force-1-07-coconut-milk-dm0211-101-release-date.jpg"
   },
   {
     "id": 8,
@@ -68,5 +68,20 @@
     "description": "A soft and earthy take on the bold hoops legend, this AF-1 '07 High dishes up an extra serving of seasonal style. Layers of Oil Green leather stitched over Olive Aura denim create a tonal and textural triumph. And that slick synthetic Swoosh? It adds a little extra shine, a perfect foil to the smooth white midsole. Money!",
     "MRP": 11795,
     "img": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/58fa34ae-0989-45ff-955e-2f41d3a4d6d3/air-force-1-07-high-oil-green-fn4190-300-release-date.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Light Smoke Grey",
+    "description": "With the help of Travis Scott, the Nike Attack is bolder than ever. This colour-blocked disrupter of a shoe debuted in '84, breaking the on-court mould and changing the look of the game forever. Channel that rebellious nature with Scott's signature backwards Swoosh and custom Cactus Jack heel embroidery, continuing the tradition of pushing boundaries and challenging the status quo.",
+    "MRP": 10795.00,
+    "img": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/07a9b3a9-e991-4b43-bc43-086ed49cf16d/attack-x-cactus-jack-light-smoke-grey-hf4198-001-release-date.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Red Stardust",
+    "description": "Available 04/01 at 9:30 am Created for the hardwood but taken to the streets, the everyday icon returns with classic details and throwback flair. This edition makes a subtle statement in Red Stardust leather and airy Sanddrift textiles, a sun-washed look that's ready for warmer days. A bright white Swoosh logo cuts through the haze.",
+    "MRP": 9695.00,
+    "img": "https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/5ac41e89-1fa1-44ec-958a-538b3fc1e32a/dunk-low-red-stardust-fb8895-601-release-date.jpg"
   }
+
 ]

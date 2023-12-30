@@ -1,18 +1,44 @@
-// import {RouterProvider , createBrowserRouter} from "react-router-dom"
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Navbar } from "./components/Navabr";
 import Products from "./components/products";
-import "./App.css";
+import { ProductAdd } from "./components/ProductAdd";
+import { Cart } from "./components/Cart";
+import { Orders } from "./components/Orders";
 
 function App() {
-  // const router = createBrowserRouter([
-  //   path:'/',
-  //   element: <navbar/>,
-  // ])
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Navbar />,
+      errorElement: <div>404</div>,
+      children: [
+        {
+          index: true,
+          element: <Products />,
+        },
+        {
+          path: "/add",
+          element: <ProductAdd />,
+        },
+        {
+          path: "/cart",
+          element: <Cart />,
+        },
+        {
+          path: "/orders",
+          element: <Orders />,
+        },
+      ],
+    },
+  ]);
+
   return (
     <>
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
-      {/* <Navbar /> */}
-      <Products />
+      <div className="flex flex-col min-h-screen">
+        <div className="flex-grow">
+          <RouterProvider router={router} />
+        </div>
+      </div>
     </>
   );
 }

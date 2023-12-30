@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 export const Navbar = () => {
   return (
@@ -7,16 +7,36 @@ export const Navbar = () => {
         <div className="navbar">
           <div className="flex-1">
             <NavLink to="/" className="btn btn-ghost text-xl text-lime-400">
-              CONTACT LIST
+              SNEAKER STORE
             </NavLink>
           </div>
           <div className="flex-none">
-            <NavLink to="/add" className="btn btn-warning">
-              Add Contact
+            <div>
+              <NavLink
+                to="/add"
+                className="btn  btn-active btn-primary ml-4  rounded-xl"
+              >
+                Add Product
+              </NavLink>
+            </div>
+            <div className="mr-4">
+              <NavLink
+                to="/orders"
+                className="btn  btn-active btn-primary ml-4  rounded-xl"
+              >
+                Orders
+              </NavLink>
+            </div>
+            <NavLink
+              to="/cart"
+              className="btn  btn-active btn-primary rounded-xl"
+            >
+              Go to Cart
             </NavLink>
           </div>
         </div>
       </nav>
+      <Outlet />
     </>
   );
 };
