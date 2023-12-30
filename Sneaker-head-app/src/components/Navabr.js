@@ -7,19 +7,22 @@ export const Navbar = () => {
         <div className="navbar">
           <div className="flex-1">
             <NavLink to="/" className="btn btn-ghost text-xl text-lime-400">
-              SNEAKER HEAD
+              SNEAKER STORE
             </NavLink>
           </div>
           <div className="flex-none">
             <div className="mr-4">
               <NavLink
                 to="/orders"
-                className="btn  btn-active btn-primary ml-4"
+                className="btn  btn-active btn-primary ml-4  rounded-xl"
               >
                 Orders
               </NavLink>
             </div>
-            <NavLink to="/cart" className="btn  btn-active btn-primary">
+            <NavLink
+              to="/cart"
+              className="btn  btn-active btn-primary rounded-xl"
+            >
               Go to Cart
             </NavLink>
           </div>
