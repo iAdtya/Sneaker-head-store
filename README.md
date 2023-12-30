@@ -11,7 +11,17 @@ Sneaker-Head is a store built with node js , express js for the backend api  red
 
 ## Installation
   ```
-  
+  git clone https://github.com/iAdtya/Sneaker-head-store
+  cd Sneaker-head-api
+  npm install
+  npm start
   ```
-
+## front-end
+  ```
+  cd ../Sneaker-hea
+  npm start
+  ```
+  ```
+  The application should now be running at http://localhost:3000.
+  ```
 
