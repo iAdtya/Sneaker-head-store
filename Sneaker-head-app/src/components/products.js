@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchProducts } from "../redux/Reducers/ProductReducers";
 import { addToCart } from "../redux/Reducers/ProductReducers";
+import { Footer } from "./footer";
 
 const Products = () => {
   const products = useSelector(productSelector);
@@ -26,7 +27,7 @@ const Products = () => {
   return (
     <>
       <div className="p-4">
-        <h1 className=" text-2xl font-bold mb-2 mt-6 text-center inline-flex animate-text-gradient bg-gradient-to-r from-[#000000] via-[#7e02fa] to-[#ee1919] bg-[200%_auto] bg-clip-text  text-transparent">
+        <h1 className=" text-2xl font-bold mb-2 mt-16 text-center inline-flex animate-text-gradient bg-gradient-to-r from-[#000000] via-[#7e02fa] to-[#ee1919] bg-[200%_auto] bg-clip-text  text-transparent">
           Welcome, Sneaker Head!!
         </h1>
         <div className="flex justify-center ">
@@ -75,6 +76,7 @@ const Products = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

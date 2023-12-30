@@ -6,6 +6,7 @@ const initialState = {
   cart: [],
   orders: [],
 };
+// console.log(initialState);
 
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
@@ -25,11 +26,21 @@ const productSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       state.cart.push(action.payload);
+      // console.log(state.cart);
       localStorage.setItem("cart", JSON.stringify(state.cart));
     },
 
     addProducts: (state, action) => {
       state.products.push(action.payload);
+    },
+    checkout: (state, action) => {
+      // Add all cart items to orders
+      state.orders.push({ items: [...state.cart], total: action.payload });
+      localStorage.setItem("orders", JSON.stringify(state.orders));
+
+      // Empty the cart
+      state.cart = [];
+      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
   },
   extraReducers: (builder) => {
@@ -42,6 +53,7 @@ const productSlice = createSlice({
 
 export const productReducer = productSlice.reducer;
 
-export const { addProducts, addToCart } = productSlice.actions;
+export const { addProducts, addToCart, deleteProduct, checkout } =
+  productSlice.actions;
 
 export const productSelector = (state) => state.productReducer.products;
