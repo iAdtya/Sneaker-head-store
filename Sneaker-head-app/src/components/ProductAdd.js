@@ -1,11 +1,32 @@
+import { useDispatch } from "react-redux";
+import { addProduct } from "../redux/Reducers/ProductReducers";
+
 export const ProductAdd = () => {
+  const dispatch = useDispatch();
+  // const products = useSelector(productSelector);
+  // dispatch(addProduct(products));
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const description = e.target.description.value;
+    const img = e.target.img.value;
+    const MRP = e.target.MRP.value;
+
+    dispatch(addProduct({ name, description, img, MRP }));
+  };
+  console.log(handleSubmit);
+
   return (
     <div className="flex justify-center mt-20">
       <div className="card card-compact w-96 mt-20 bg-red-300 ">
         <h1 className="text-4xl mb-6 mt-10 text-center text-black">
           Add Sneaker!!
         </h1>
-        <form className="bg-yellow shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-yellow shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        >
           <div className="mb-4">
             <label
               className="block text-black text-sm font-bold mb-2"

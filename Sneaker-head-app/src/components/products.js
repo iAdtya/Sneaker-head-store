@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { productSelector } from "../redux/Reducers/ProductReducers";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { fetchProducts } from "../redux/Reducers/ProductReducers";
+import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/Reducers/ProductReducers";
 import { Footer } from "./footer";
 import toast from "react-hot-toast";

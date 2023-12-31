@@ -12,13 +12,13 @@ export const getProducts = async (req, res) => {
 };
 
 //todo testing
-// export const renderForm = async (req, res) => {
-//   try {
-//     res.render("listProducts");
-//   } catch (error) {
-//     console.error(`error in rendering form :: ${error}`);
-//   }
-// };
+export const renderForm = async (req, res) => {
+  try {
+    res.render("listProducts");
+  } catch (error) {
+    console.error(`error in rendering form :: ${error}`);
+  }
+};
 
 export const addProduct = async (req, res) => {
   try {
@@ -30,7 +30,7 @@ export const addProduct = async (req, res) => {
     });
 
     await newProduct.save();
-    return res.redirect("back");
+    return res.status(200).redirect("back");
   } catch (error) {
     console.error(`error in adding products :: ${error}`);
     res.status(500).send("Server error");
