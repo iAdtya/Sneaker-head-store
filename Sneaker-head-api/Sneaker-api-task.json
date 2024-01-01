@@ -1,0 +1,103 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:eu-west-2:536018824818:task-definition/Sneaker-api-task:1",
+    "containerDefinitions": [
+        {
+            "name": "sneaker-api-container",
+            "image": "536018824818.dkr.ecr.eu-west-2.amazonaws.com/sneaker-api",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "sneaker-api-8000-tcp",
+                    "containerPort": 8000,
+                    "hostPort": 8000,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/Sneaker-api-task",
+                    "awslogs-region": "eu-west-2",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            },
+            "healthCheck": {
+                "command": [
+                    "CMD-SHELL",
+                    "curl -f http://localhost:8000/api/health || exit 1"
+                ],
+                "interval": 30,
+                "timeout": 5,
+                "retries": 3
+            }
+        }
+    ],
+    "family": "Sneaker-api-task",
+    "taskRoleArn": "arn:aws:iam::536018824818:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::536018824818:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 1,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.24"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.container-health-check"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "registeredAt": "2024-01-01T15:50:01.924Z",
+    "registeredBy": "arn:aws:iam::536018824818:root",
+    "tags": []
+}
