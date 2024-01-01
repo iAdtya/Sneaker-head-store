@@ -12,11 +12,11 @@
 #       run:  echo "this workflow is working"
 
 
-name: CICD
+name: Deploy to ecs 
 
 on:
   push:
-    branches: [ deploy-to-ecs-fargate ]
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
@@ -41,7 +41,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
-          REPOSITORY: nodejs-app
+          REPOSITORY: sneaker-api
         run: |
           # Build a docker container and
           # push it to ECR so that it can
@@ -54,13 +54,13 @@ jobs:
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: nodejs-app-task-definition.json 
+          task-definition: /Sneaker-head-api/Sneaker-api-task.json 
           container-name: nodejs-app
           image: ${{ steps.build-image.outputs.image }}    
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: nodejs-app-service
-          cluster: DevCluster
+          service: sneaker-api-service
+          cluster: sneaker-api-cluster
           wait-for-service-stability: true    
