@@ -11,12 +11,19 @@
 #     - name: run a simple github actions
 #       run:  echo "this workflow is working"
 
-name: Deploy to ecs
+name: Deploy to Amazon ECS
 
 on:
   push:
     branches:
       - main
+env:                                            
+  AWS_REGION: ap-south-1              
+  ECR_REPOSITORY: sneaker-api           
+  ECS_SERVICE: sneaker-api-service                
+  ECS_CLUSTER: Sneaker-api-cluster	                
+  ECS_TASK_DEFINITION: Sneaker-api-task	     
+  CONTAINER_NAME: sneaker-api-container
 
 jobs:
   build-and-deploy:
@@ -55,12 +62,13 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           task-definition: /Sneaker-head-api/Sneaker-api-task.json
-          container-name: nodejs-app
+          container-name: ${{ env.CONTAINER_NAME }}
           image: ${{ steps.build-image.outputs.image }}
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: sneaker-api-service
-          cluster: sneaker-api-cluster
+          service: ${{ env.ECS_SERVICE }}
+          cluster: ${{ env.ECS_CLUSTER }}
           wait-for-service-stability: true
+
