@@ -36,3 +36,5 @@ export const addProduct = async (req, res) => {
     res.status(500).send("Server error");
   }
 };
+
+
