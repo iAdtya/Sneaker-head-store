@@ -28,3 +28,11 @@ Specify the license under which your project is distributed.
 ## Contact
 
 Provide contact information for users to reach out to you with questions or feedback.
+
+# portname
+sneaker-api-8080-tcp
+
+# container port 
+8080
+# container name 
+sneaker-api-container
