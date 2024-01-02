@@ -3,7 +3,7 @@ Sneaker-Head is a store built with node js , express js for the backend api  red
 
 ## server products api
 ```
-http://15.207.115.224:8000/api/products
+https://sneakerapi.live/api/products
 ```
 
 ## Statemanagement
