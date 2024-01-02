@@ -11,9 +11,7 @@ export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
     try {
-      const response = await axios.get(
-        "http://15.207.115.224:8000/api/products"
-      );
+      const response = await axios.get("https://sneakerapi.live/api/products");
       return response.data.products;
     } catch (error) {
       console.error(error);
@@ -26,7 +24,7 @@ export const addProduct = createAsyncThunk(
   async (product) => {
     try {
       const response = await axios.post(
-        "http://15.207.115.224:8000/api/addProduct",
+        "https://sneakerapi.live/api/addProduct",
         product
       );
       return response.data.products;
