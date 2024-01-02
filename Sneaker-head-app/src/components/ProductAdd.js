@@ -1,21 +1,30 @@
 import { useDispatch } from "react-redux";
 import { addProduct } from "../redux/Reducers/ProductReducers";
+import { useNavigate } from "react-router-dom";
 
 export const ProductAdd = () => {
   const dispatch = useDispatch();
   // const products = useSelector(productSelector);
   // dispatch(addProduct(products));
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const description = e.target.description.value;
     const img = e.target.img.value;
     const MRP = e.target.MRP.value;
 
-    dispatch(addProduct({ name, description, img, MRP }));
+    const product = { name, description, img, MRP };
+    console.log(product);
+    try {
+      await dispatch(addProduct(product));
+      console.log("Product added successfully!!");
+      navigate("/");
+    } catch (error) {
+      console.log("Failed to add product:", error);
+    }
   };
-  console.log(handleSubmit);
 
   return (
     <div className="flex justify-center mt-20">
@@ -38,7 +47,7 @@ export const ProductAdd = () => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
               id="name"
               name="name"
-              type="text"
+              type="name"
               required
               placeholder="Name"
             />
@@ -50,10 +59,11 @@ export const ProductAdd = () => {
             >
               Description
             </label>
-            <textarea
+            <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
               id="description"
               name="description"
+              type="description"
               required
               placeholder="Description"
             />
@@ -69,7 +79,7 @@ export const ProductAdd = () => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
               id="img"
               name="img"
-              type="url"
+              type="img"
               required
               placeholder="IMG"
             />
@@ -85,7 +95,7 @@ export const ProductAdd = () => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
               id="MRP"
               name="MRP"
-              type="number"
+              type="MRP"
               required
               placeholder="MRP"
             />

@@ -36,7 +36,7 @@ const Products = () => {
         </h1>
         <div className="flex justify-center ">
           <div className="grid grid-cols-4 gap-4 items-center  ">
-            {products.map((product) => (
+            {products && products.map((product) => (
               <div
                 className="card card-compact w-full bg-base-100 shadow-xl rounded-3xl"
                 key={product.id}
