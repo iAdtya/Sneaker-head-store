@@ -1,6 +1,11 @@
 # Sneaker-head-store
 Sneaker-Head is a store built with node js , express js for the backend api  redux-toolkit , tailwind css , daisy ui , react-toast-hot , loacal-storage and great ui/ux
 
+## server products api
+```
+http://15.207.115.224:8000/api/products
+```
+
 ## Statemanagement
 ![Screenshot 2023-12-31 010516](https://github.com/iAdtya/Sneaker-head-store/assets/93979441/519fc6a3-679d-4c76-8f69-f681068d6a9a)
 
