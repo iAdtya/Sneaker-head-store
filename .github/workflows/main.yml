@@ -21,4 +21,6 @@ jobs:
       - name: npm install
         run: npm ci
       - name: Run Tests
-        run: npm test
+        run: |
+          cd Sneaker-head-app
+          npm test
