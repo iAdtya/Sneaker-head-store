@@ -6,7 +6,7 @@ Sneaker-Head is a store built with node js , express js for the backend api  red
 https://sneakerapi.live/api/products
 ```
 
-## Statemanagement
+## State-management
 ![Screenshot 2023-12-31 010516](https://github.com/iAdtya/Sneaker-head-store/assets/93979441/519fc6a3-679d-4c76-8f69-f681068d6a9a)
 
 ## Output
