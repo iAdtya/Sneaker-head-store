@@ -18,8 +18,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "test": "cd Sneaker-head-app && npm test",
     "build": "react-scripts build",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
