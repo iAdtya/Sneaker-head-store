@@ -22,5 +22,5 @@ jobs:
         run: npm ci
       - name: Run Tests
         run: |
-          cd ../../Sneaker-head-app
+          cd Sneaker-head-app
           npm test
