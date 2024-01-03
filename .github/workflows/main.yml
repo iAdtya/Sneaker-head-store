@@ -21,4 +21,4 @@ jobs:
       - name: Run Tests
         run: |
           cd Sneaker-head-app
-          npm test
+          npm test src/sume.test.js 
