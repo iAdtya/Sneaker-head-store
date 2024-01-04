@@ -16,7 +16,11 @@ jobs:
         node-version: '18'
 
     - name: Install Dependencies
-      run: npm ci
+      run: |
+        cd Sneaker-head-app
+        npm ci
 
     - name: Run Tests
-      run: npm run test -- Sneaker-head-app/src/sum.test.js
+      run: |
+        cd Sneaker-head-app
+        npm run test -- src/sum.test.js
